@@ -3,8 +3,6 @@ module.exports = function (RED) {
   const keyCodeToCharShift =
     require("../utils/keyCodeToChar").keyCodeToCharShift;
   let isShift = false;
-  // let islCapsLock = false;
-  // let isNumLock = false;
   let scannerData = "";
   let timeoutId = null;
   function KeycodeConverter(config) {
@@ -27,11 +25,7 @@ module.exports = function (RED) {
     }
 
     node.on("input", function (msg) {
-      // this.log(`Received key event: ${msg.payload.action} ${msg.payload.code}`);
       this.status({ fill: "green", shape: "dot", text: "Received key event" }); // Uncomment if using in Node-RED
-
-      // msg.playload= {"keyCode":{"topic":"pi/key","payload":"[Circular ~]","action":"down","_msgid":"a5406a69e176d984"},"type":"keyboard","playload":20,"code":20,"action":"down"}
-
       const { code, action } = msg.payload;
       if (typeof code === "undefined" || typeof action === "undefined") {
         node.log(`Received invalid key event: ${action} ${code}`);
