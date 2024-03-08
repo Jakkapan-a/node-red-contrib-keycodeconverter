@@ -1,12 +1,10 @@
 <script type="text/javascript">
     RED.nodes.registerType('key-code-converter',{
         category: 'function',
-        color: '#a6bbcf',
+        color: '#E9967A',
         defaults: {
             name: {value:""},
             timeoutDuration: {value:"500", required:true, validate:RED.validators.number()},
-            // isCheckBox: {value:false},
-            // keyChar: {value:""},
         },
         inputs:1,
         outputs:1,
@@ -26,10 +24,5 @@
     <div class="form-row">
         <label for="node-input-timeoutDuration"><i class="fa fa-clock-o"></i> Timeout Duration (ms)</label>
         <input type="number" id="node-input-timeoutDuration" placeholder="Timeout Duration">
-        <!-- <input type="checkbox" id="node-input-isCheckBox"> -->
     </div>
-    <!-- <div class="form-row">
-        <label for="node-input-keyChar"><i class="fa fa-key"></i> Key Code</label>
-        <input type="text" id="node-input-keyChar" placeholder="Key Char">
-    </div> -->
 </script>

@@ -3,8 +3,8 @@ module.exports = function (RED) {
   const keyCodeToCharShift =
     require("../utils/keyCodeToChar").keyCodeToCharShift;
   let isShift = false;
-  let islCapsLock = false;
-  let isNumLock = false;
+  // let islCapsLock = false;
+  // let isNumLock = false;
   let scannerData = "";
   let timeoutId = null;
   function KeycodeConverter(config) {
