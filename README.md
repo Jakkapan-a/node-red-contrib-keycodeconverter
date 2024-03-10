@@ -1,5 +1,50 @@
-### This a convert keycode to char name
-for mapping in keymap: 
+# For convert keycode to char name
+Requirement payload is a json object with the following structure:
+# Input example
+```javascript
+nuplayload = {
+  "code": 30, // key code of the keyboard
+  "action": "down" // action of the keyboard
+}
+```
+# Parameters
+- code: key code of the keyboard
+- action: action of the keyboard
+
+key enter is 28 || 96
+after key enter, the key will send to output and reset or if time duration, the key will send to output and reset
+- time duration: 500ms as default
+
+# Output 
+```javascript
+playload = {
+  "text": "xxx", // text of the keyboard
+  "status": "success" // status || timeout
+}
+```
+
+<!-- Image -->
+<img src="./images/01.png" alt="drawing" width="500"/>
+
+
+# How to use
+<img src="./images/02.png" alt="drawing" width="500"/>
+
+In function prepare data
+```javascript
+let modifiedMsg = msg;
+if (typeof msg.payload === 'undefined' && typeof msg.action === 'undefined') 
+{
+    return; // retrun empty
+}
+modifiedMsg.payload = {
+    "code": msg.payload,
+    "action": msg.action
+};
+return modifiedMsg;
+```
+
+# for mapping in keymap: 
 ```javascript
     const keyCodeToChar = {
     // text

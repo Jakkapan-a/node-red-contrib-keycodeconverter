@@ -2,7 +2,7 @@
   "name": "red-contrib-keycodeconverter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
       "key-code-converter": "./src/keycodeconverter/key-code-converter.js"
     }
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node-red", "keycode", "converter"],
+  "author": "Jakkapan A.",
   "license": "ISC"
 }
